@@ -1,5 +1,26 @@
 .project-details{
   max-width: 100%;
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px #222222 solid;
+  position: relative;
+  .flex-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .project-date{
+      margin: 0;
+    }
+    .indicator{
+      top: 16px;
+      right: 16px;
+      padding: 3px 7px;
+      font-size: 14px;
+      border-radius: 30px;
+      color: white;
+    }
+  }
+
   .gallery{
     display: flex;
     max-width: 100%;

@@ -188,3 +188,30 @@ endif;
 
 
 
+// create shortcode
+function display_projects_shortcode($atts) {
+    $atts = shortcode_atts( array(
+        'block_title' => 'Проекти',
+    ), $atts );
+
+    $projects_query = new WP_Query(array(
+        'post_type' => 'project',
+        'posts_per_page' => -1,
+    ));
+
+    ob_start();
+    echo '<h2 class="projects-title">' . esc_html($atts['block_title']) . '</h2>';
+    if ($projects_query->have_posts()) {
+        echo '<div class="projects">';
+        while ($projects_query->have_posts()) {
+            $projects_query->the_post();
+            get_template_part('template-parts/project-card', 'project-card');
+            echo '<script>Fancybox.bind(document.getElementById("gallery-' . get_the_ID() . '"), "[data-fancybox]", {});</script>';
+        }
+        echo '</div>';
+    } else {
+        echo '<p>Записів не знайдено.</p>';
+    }
+    return ob_get_clean();
+}
+add_shortcode('display_projects', 'display_projects_shortcode');
