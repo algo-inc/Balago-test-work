@@ -1,0 +1,12 @@
+.project-details{
+  max-width: 100%;
+  .gallery{
+    display: flex;
+    max-width: 100%;
+    gap: 10px;
+    img{
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

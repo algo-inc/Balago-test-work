@@ -3,4 +3,9 @@
   margin: 0 auto;
 }
 
+.projects {
+  display: flex;
+  gap: 40px;
+}
+
 /*# sourceMappingURL=base.css.map */

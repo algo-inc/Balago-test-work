@@ -1,5 +1,5 @@
 </div><!-- #content -->
-<footer id="colophon" class="site-footer">
+<footer  class="site-footer">
     <div class="container">
         <div class="site-info">
             <?php

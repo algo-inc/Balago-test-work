@@ -1,0 +1,14 @@
+.project-details {
+  max-width: 100%;
+}
+.project-details .gallery {
+  display: flex;
+  max-width: 100%;
+  gap: 10px;
+}
+.project-details .gallery img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*# sourceMappingURL=project-card.css.map */
