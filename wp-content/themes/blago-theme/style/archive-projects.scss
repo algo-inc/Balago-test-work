@@ -1,0 +1,43 @@
+.post-type-archive-projects{
+  .content-container{
+    max-width: 1420px;
+    margin: 0 auto;
+    padding: 0 16px;
+    .archive-sidebar{
+      padding: 16px;
+    }
+    .flex-container{
+      display: flex;
+      gap: 20px;
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+      .archive-sidebar{
+        max-width: 400px;
+        min-width: 320px;
+        width: 100%;
+        background: #333333;
+        border-radius: 20px;
+        label{
+          color: white;
+        }
+        #status-select{
+          width: 100%;
+          border-radius: 10px;
+          height: 40px;
+          padding: 0 15px;
+
+        }
+      }
+    }
+  }
+  .posts{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+    gap: 14px;
+  }
+
+}
+
+

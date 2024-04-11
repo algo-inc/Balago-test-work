@@ -1,0 +1,41 @@
+.post-type-archive-projects .content-container {
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.post-type-archive-projects .content-container .archive-sidebar {
+  padding: 16px;
+}
+.post-type-archive-projects .content-container .flex-container {
+  display: flex;
+  gap: 20px;
+}
+@media (max-width: 768px) {
+  .post-type-archive-projects .content-container .flex-container {
+    flex-direction: column;
+  }
+}
+.post-type-archive-projects .content-container .flex-container .archive-sidebar {
+  max-width: 400px;
+  min-width: 320px;
+  width: 100%;
+  background: #333333;
+  border-radius: 20px;
+}
+.post-type-archive-projects .content-container .flex-container .archive-sidebar label {
+  color: white;
+}
+.post-type-archive-projects .content-container .flex-container .archive-sidebar #status-select {
+  width: 100%;
+  border-radius: 10px;
+  height: 40px;
+  padding: 0 15px;
+}
+.post-type-archive-projects .posts {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+  gap: 14px;
+}
+
+/*# sourceMappingURL=archive-projects.css.map */

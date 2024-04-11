@@ -1,15 +1,75 @@
-.container{
+.container {
   max-width: 1420px;
   margin: 0 auto;
   padding: 0 16px;
+
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-.projects-title{
+header {
+  padding: 25px 0;
+
+  .main-navigation {
+    ul {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0;
+      gap: 16px;
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+}
+
+
+.projects-container {
+  margin-bottom: 70px;
+
+  .flex-container {
+    .projects-title {
+      text-align: center;
+      line-height: normal;
+      font-size: 42px;
+    }
+    .archive-link {
+      padding: 10px 15px;
+      background: black;
+      border-radius: 50px;
+      color: white;
+    }
+    margin-bottom: 40px;
+  }
+  .projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-gap: 20px;
+    .project-details{
+      height: auto;
+    }
+  }
+}
+
+
+.team-title {
   margin-bottom: 40px;
-  text-align: center;
+  font-size: 42px;
 }
-.projects{
+
+.team {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px; /* Проміжок між картками */
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
 }
+
+.site-info {
+  text-align: center;
+  margin-top: 50px;
+}
+
+

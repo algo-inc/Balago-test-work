@@ -1,14 +1,21 @@
 .project-details {
   max-width: 100%;
   padding: 16px;
-  border-radius: 20px;
-  border: 1px #222222 solid;
+  border-radius: 12px;
+  border: 1px #e6e6e6 solid;
   position: relative;
+  background: #e6e6e6;
+  display: flex;
+  flex-direction: column;
+}
+.project-details h2 {
+  line-height: normal;
 }
 .project-details .flex-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 .project-details .flex-container .project-date {
   margin: 0;
@@ -22,9 +29,12 @@
   color: white;
 }
 .project-details .gallery {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
   max-width: 100%;
   gap: 10px;
+  margin-top: auto;
 }
 .project-details .gallery img {
   max-width: 100%;

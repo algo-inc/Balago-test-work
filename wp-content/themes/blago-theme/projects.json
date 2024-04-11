@@ -1,0 +1,69 @@
+[
+  {
+    "title": "Test Post",
+    "content": "Це тестовий контент для першого проекту.",
+    "project_name": "Логотип QRS",
+    "project_description": "Створення унікального логотипу для компанії QRS з врахуванням її бренд-ідентичності. Проект передбачає аналіз ринку та конкурентів, розробку концепцій та варіантів логотипу, а також узгодження замовника та підготовку необхідної документації.",
+    "start_date": "2024-04-26",
+    "status": false,
+    "gallery": [
+      {
+        "ID": 1,
+        "id": 1,
+        "title": "agrotochka-1920px-01",
+        "filename": "agrotochka-1920px-01.png",
+        "filesize": 3576827,
+        "url": "/content/gallery-1.jpg",
+        "alt": "gallery-1",
+        "description": "Зображення для проекту QRS.",
+        "caption": "Агро 1",
+        "name": "gallery-1",
+        "mime_type": "image/png",
+        "type": "image",
+        "subtype": "png",
+        "icon": "/wp-includes/images/media/gallery-1.jpg",
+        "width": 1920,
+        "height": 1080,
+        "sizes": {
+          "thumbnail": "/wp-content/uploads/2024/04/gallety-2-150x150.jpeg",
+          "medium": "/wp-content/uploads/2024/04/gallety-2-300x141.jpeg",
+          "large": "/wp-content/uploads/2024/04/gallety-2.jpeg"
+        }
+      }
+    ]
+  },
+
+  {
+    "title": "Test post 2",
+    "content": "Це тестовий контент для другого проекту.",
+    "project_name": "Веб-сайт ABC",
+    "project_description": "Створення сучасного веб-сайту для компанії ABC. Проект передбачає аналіз ринку, розробку дизайну та функціональності, а також тестування та запуск сайту.",
+    "start_date": "2024-05-01",
+    "status": true,
+    "gallery": [
+      {
+        "ID": 2,
+        "id": 2,
+        "title": "web-design-01",
+        "filename": "web-design-01.png",
+        "filesize": 5432712,
+        "url": "/content/images/web-design-01.png",
+        "alt": "Дизайн веб-сайту",
+        "description": "Зображення для проекту веб-сайту.",
+        "caption": "Веб-дизайн 1",
+        "name": "web-design-01",
+        "mime_type": "image/png",
+        "type": "image",
+        "subtype": "png",
+        "icon": "/wp-includes/images/media/default.png",
+        "width": 1920,
+        "height": 1080,
+        "sizes": {
+          "thumbnail": "/content/images/web-design-01-150x150.png",
+          "medium": "/content/images/web-design-01-300x169.png",
+          "large": "/content/images/web-design-01-1024x576.png"
+        }
+      }
+    ]
+  }
+]

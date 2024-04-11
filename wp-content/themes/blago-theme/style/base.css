@@ -1,19 +1,67 @@
-@charset "UTF-8";
 .container {
   max-width: 1420px;
   margin: 0 auto;
   padding: 0 16px;
 }
-
-.projects-title {
-  margin-bottom: 40px;
-  text-align: center;
+.container .flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.projects {
+header {
+  padding: 25px 0;
+}
+header .main-navigation ul {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0;
+  gap: 16px;
+}
+header .main-navigation ul li {
+  list-style: none;
+}
+
+.projects-container {
+  margin-bottom: 70px;
+}
+.projects-container .flex-container {
+  margin-bottom: 40px;
+}
+.projects-container .flex-container .projects-title {
+  text-align: center;
+  line-height: normal;
+  font-size: 42px;
+}
+.projects-container .flex-container .archive-link {
+  padding: 10px 15px;
+  background: black;
+  border-radius: 50px;
+  color: white;
+}
+.projects-container .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 20px; /* Проміжок між картками */
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-gap: 20px;
+}
+.projects-container .projects .project-details {
+  height: auto;
+}
+
+.team-title {
+  margin-bottom: 40px;
+  font-size: 42px;
+}
+
+.team {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.site-info {
+  text-align: center;
+  margin-top: 50px;
 }
 
 /*# sourceMappingURL=base.css.map */
