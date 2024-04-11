@@ -1,69 +1,88 @@
 [
-  {
-    "title": "Test Post",
-    "content": "Це тестовий контент для першого проекту.",
-    "project_name": "Логотип QRS",
-    "project_description": "Створення унікального логотипу для компанії QRS з врахуванням її бренд-ідентичності. Проект передбачає аналіз ринку та конкурентів, розробку концепцій та варіантів логотипу, а також узгодження замовника та підготовку необхідної документації.",
-    "start_date": "2024-04-26",
-    "status": false,
-    "gallery": [
-      {
-        "ID": 1,
-        "id": 1,
-        "title": "agrotochka-1920px-01",
-        "filename": "agrotochka-1920px-01.png",
-        "filesize": 3576827,
-        "url": "/content/gallery-1.jpg",
-        "alt": "gallery-1",
-        "description": "Зображення для проекту QRS.",
-        "caption": "Агро 1",
-        "name": "gallery-1",
-        "mime_type": "image/png",
-        "type": "image",
-        "subtype": "png",
-        "icon": "/wp-includes/images/media/gallery-1.jpg",
-        "width": 1920,
-        "height": 1080,
-        "sizes": {
-          "thumbnail": "/wp-content/uploads/2024/04/gallety-2-150x150.jpeg",
-          "medium": "/wp-content/uploads/2024/04/gallety-2-300x141.jpeg",
-          "large": "/wp-content/uploads/2024/04/gallety-2.jpeg"
-        }
-      }
-    ]
-  },
-
-  {
-    "title": "Test post 2",
-    "content": "Це тестовий контент для другого проекту.",
-    "project_name": "Веб-сайт ABC",
-    "project_description": "Створення сучасного веб-сайту для компанії ABC. Проект передбачає аналіз ринку, розробку дизайну та функціональності, а також тестування та запуск сайту.",
-    "start_date": "2024-05-01",
-    "status": true,
-    "gallery": [
-      {
-        "ID": 2,
-        "id": 2,
-        "title": "web-design-01",
-        "filename": "web-design-01.png",
-        "filesize": 5432712,
-        "url": "/content/images/web-design-01.png",
-        "alt": "Дизайн веб-сайту",
-        "description": "Зображення для проекту веб-сайту.",
-        "caption": "Веб-дизайн 1",
-        "name": "web-design-01",
-        "mime_type": "image/png",
-        "type": "image",
-        "subtype": "png",
-        "icon": "/wp-includes/images/media/default.png",
-        "width": 1920,
-        "height": 1080,
-        "sizes": {
-          "thumbnail": "/content/images/web-design-01-150x150.png",
-          "medium": "/content/images/web-design-01-300x169.png",
-          "large": "/content/images/web-design-01-1024x576.png"
-        }
-      }
-    ]
-  }
+    {
+        "title": "Test Post",
+        "content": "\u0426\u0435 \u0442\u0435\u0441\u0442\u043e\u0432\u0438\u0439 \u043a\u043e\u043d\u0442\u0435\u043d\u0442 \u0434\u043b\u044f \u043f\u0435\u0440\u0448\u043e\u0433\u043e \u043f\u0440\u043e\u0435\u043a\u0442\u0443.",
+        "project_name": "\u041b\u043e\u0433\u043e\u0442\u0438\u043f QRS",
+        "project_description": "\u0421\u0442\u0432\u043e\u0440\u0435\u043d\u043d\u044f \u0443\u043d\u0456\u043a\u0430\u043b\u044c\u043d\u043e\u0433\u043e \u043b\u043e\u0433\u043e\u0442\u0438\u043f\u0443 \u0434\u043b\u044f \u043a\u043e\u043c\u043f\u0430\u043d\u0456\u0457 QRS \u0437 \u0432\u0440\u0430\u0445\u0443\u0432\u0430\u043d\u043d\u044f\u043c \u0457\u0457 \u0431\u0440\u0435\u043d\u0434-\u0456\u0434\u0435\u043d\u0442\u0438\u0447\u043d\u043e\u0441\u0442\u0456. \u041f\u0440\u043e\u0435\u043a\u0442 \u043f\u0435\u0440\u0435\u0434\u0431\u0430\u0447\u0430\u0454 \u0430\u043d\u0430\u043b\u0456\u0437 \u0440\u0438\u043d\u043a\u0443 \u0442\u0430 \u043a\u043e\u043d\u043a\u0443\u0440\u0435\u043d\u0442\u0456\u0432, \u0440\u043e\u0437\u0440\u043e\u0431\u043a\u0443 \u043a\u043e\u043d\u0446\u0435\u043f\u0446\u0456\u0439 \u0442\u0430 \u0432\u0430\u0440\u0456\u0430\u043d\u0442\u0456\u0432 \u043b\u043e\u0433\u043e\u0442\u0438\u043f\u0443, \u0430 \u0442\u0430\u043a\u043e\u0436 \u0443\u0437\u0433\u043e\u0434\u0436\u0435\u043d\u043d\u044f \u0437\u0430\u043c\u043e\u0432\u043d\u0438\u043a\u0430 \u0442\u0430 \u043f\u0456\u0434\u0433\u043e\u0442\u043e\u0432\u043a\u0443 \u043d\u0435\u043e\u0431\u0445\u0456\u0434\u043d\u043e\u0457 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430\u0446\u0456\u0457.",
+        "start_date": "20240426",
+        "status": true,
+        "gallery": [
+            {
+                "title": "gallery-2",
+                "filename": "gallery-2.png",
+                "alt": "",
+                "description": "",
+                "sizes": {
+                    "thumbnail": "/wp-content/uploads/content/gallery/gallery-2-150x150.jpeg",
+                    "medium": "/wp-content/uploads/content/gallery/gallery-2-300x141.jpeg",
+                    "large": "/wp-content/uploads/content/gallery/gallery-2.png"
+                }
+            },
+            {
+                "title": "gallery-1",
+                "filename": "gallery-1.jpg",
+                "alt": "",
+                "description": "",
+                "sizes": {
+                    "thumbnail": "/wp-content/uploads/content/gallery/gallery-1-150x150.jpg",
+                    "medium": "/wp-content/uploads/content/gallery/gallery-1-300x197.jpg",
+                    "large": "/wp-content/uploads/content/gallery/gallery-1.jpg"
+                }
+            },
+            {
+                "title": "gallery-3",
+                "filename": "gallery-3.png",
+                "alt": "",
+                "description": "",
+                "sizes": {
+                    "thumbnail": "/wp-content/uploads/content/gallery/gallery-3-150x150.jpg",
+                    "medium": "/wp-content/uploads/content/gallery/gallery-3-300x187.jpg",
+                    "large": "/wp-content/uploads/content/gallery/gallery-3-1024x638.jpg"
+                }
+            }
+        ]
+    },
+    {
+        "title": "\u041d\u043e\u0432\u0438\u0439 \u0432\u0435\u0431-\u0441\u0430\u0439\u0442 \u0434\u043b\u044f ABC",
+        "content": "\u0426\u0435 \u0442\u0435\u0441\u0442\u043e\u0432\u0438\u0439 \u043a\u043e\u043d\u0442\u0435\u043d\u0442 \u0434\u043b\u044f \u043d\u043e\u0432\u043e\u0433\u043e \u0432\u0435\u0431-\u0441\u0430\u0439\u0442\u0443 \u043a\u043e\u043c\u043f\u0430\u043d\u0456\u0457 ABC.",
+        "project_name": "\u0412\u0435\u0431-\u0441\u0430\u0439\u0442 ABC",
+        "project_description": "\u0421\u0442\u0432\u043e\u0440\u0435\u043d\u043d\u044f \u0441\u0443\u0447\u0430\u0441\u043d\u043e\u0433\u043e \u0432\u0435\u0431-\u0441\u0430\u0439\u0442\u0443 \u0434\u043b\u044f \u043a\u043e\u043c\u043f\u0430\u043d\u0456\u0457 ABC. \u041f\u0440\u043e\u0435\u043a\u0442 \u043f\u0435\u0440\u0435\u0434\u0431\u0430\u0447\u0430\u0454 \u0430\u043d\u0430\u043b\u0456\u0437 \u0440\u0438\u043d\u043a\u0443, \u0440\u043e\u0437\u0440\u043e\u0431\u043a\u0443 \u0434\u0438\u0437\u0430\u0439\u043d\u0443 \u0442\u0430 \u0444\u0443\u043d\u043a\u0446\u0456\u043e\u043d\u0430\u043b\u044c\u043d\u043e\u0441\u0442\u0456, \u0430 \u0442\u0430\u043a\u043e\u0436 \u0442\u0435\u0441\u0442\u0443\u0432\u0430\u043d\u043d\u044f \u0442\u0430 \u0437\u0430\u043f\u0443\u0441\u043a \u0441\u0430\u0439\u0442\u0443.",
+        "start_date": "20240501",
+        "status": true,
+        "gallery": [
+            {
+                "title": "gallery-2",
+                "filename": "gallery-2.png",
+                "alt": "",
+                "description": "",
+                "sizes": {
+                    "thumbnail": "/wp-content/uploads/content/gallery/gallery-2-150x150.jpeg",
+                    "medium": "/wp-content/uploads/content/gallery/gallery-2-300x141.jpeg",
+                    "large": "/wp-content/uploads/content/gallery/gallery-2.png"
+                }
+            },
+            {
+                "title": "gallery-1",
+                "filename": "gallery-1.jpg",
+                "alt": "",
+                "description": "",
+                "sizes": {
+                    "thumbnail": "/wp-content/uploads/content/gallery/gallery-1-150x150.jpg",
+                    "medium": "/wp-content/uploads/content/gallery/gallery-1-300x197.jpg",
+                    "large": "/wp-content/uploads/content/gallery/gallery-1.jpg"
+                }
+            },
+            {
+                "title": "gallery-3",
+                "filename": "gallery-3.png",
+                "alt": "",
+                "description": "",
+                "sizes": {
+                    "thumbnail": "/wp-content/uploads/content/gallery/gallery-3-150x150.jpg",
+                    "medium": "/wp-content/uploads/content/gallery/gallery-3-300x187.jpg",
+                    "large": "/wp-content/uploads/content/gallery/gallery-3-1024x638.jpg"
+                }
+            }
+        ]
+    }
 ]

@@ -4,6 +4,10 @@ $project_description = get_field('project_description');
 $start_date = get_field('start_date');
 $status = get_field('status');
 $gallery = get_field('gallery');
+echo '<pre>';
+print_r($gallery);
+echo '</pre>';
+
 $max_length = 180;
 ?>
 <div class="project-details">
@@ -30,9 +34,6 @@ $max_length = 180;
     </a>
     <div class="gallery" id="gallery-<?= the_ID(); ?>">
         <?php $counter = 0;
-        echo '<pre>';
-        print_r($gallery);
-        echo '</pre>';
         
         ?>
         

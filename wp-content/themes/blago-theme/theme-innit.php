@@ -4,56 +4,61 @@ require_once(ABSPATH . 'wp-admin/includes/file.php');
 require_once(ABSPATH . 'wp-admin/includes/image.php');
 
 
+function moveToTmp($file)
+{
+    $tmp_folder = sys_get_temp_dir();
+    $destination_file = $tmp_folder . DIRECTORY_SEPARATOR . wp_basename($file);
+    copy($file, $destination_file);
+    return basename($file);
+}
 
+function add_image_to_media_library($filename)
+{
+    $contents = file_get_contents($filename);
 
-function upload_images_to_media_library(): void {
-
-    $upload_dir = wp_upload_dir();
-    $upload_path = $upload_dir['basedir'];
-    $images_folder_path = get_template_directory() . '/content/images/';
-
-    $image_files = glob($images_folder_path . '*.{jpg,jpeg,png,webp}', GLOB_BRACE);
-
-    $image_ids = [];
-
-    foreach ($image_files as $image_file) {
-        $image_file_name = basename($image_file);
-        $image_file_path = $upload_path . '/content/' . $image_file_name;
-        if (file_exists($image_file_path)) {
-            continue;
-        }
-        $temp_image = tempnam(sys_get_temp_dir(), 'img_');
-        copy($image_file, $temp_image);
-
-        $file_array = [
-            'name' => basename($image_file),
-            'tmp_name' => $temp_image,
-        ];
-        $attachment_id = media_handle_sideload($file_array, 0);
-        if (!is_wp_error($attachment_id)) {
-            $image_ids[] = $attachment_id;
-        }
+    $upload = wp_upload_bits(basename($filename), null, $contents);
+    $type = '';
+    if (!empty($upload['type'])) {
+        $type = $upload['type'];
+    } else {
+        $mime = wp_check_filetype($upload['file']);
+        if ($mime)
+            $type = $mime['type'];
     }
 
-    if (!empty($image_ids)) {
-        update_option('theme_image_ids', $image_ids);
-    }
+    $attachment = array(
+        'post_title' => basename($upload['file']),
+        'post_content' => '',
+        'post_type' => 'attachment',
+        'post_parent' => 0,
+        'post_mime_type' => $type,
+        'guid' => $upload['url'],
+    );
+
+    // Save the data
+    $id = wp_insert_attachment($attachment, $upload['file'], 0);
+    wp_update_attachment_metadata($id, wp_generate_attachment_metadata($id, $upload['file']));
+
+    return $id;
+
 }
 
 
 
-function handle_user_choice() {
-    if (isset($_POST['create_posts_yes'])) {
-        upload_images_to_media_library();
-        create_projects_from_json();
-        create_team_from_json();
 
+function handle_user_choice(): void
+{
+    if (isset($_POST['create_posts_yes'])) {
+        create_projects_from_json();
+//        create_team_from_json();
         update_option('user_choice_made', 'yes');
     } elseif (isset($_POST['create_posts_no'])) {
         update_option('user_choice_made', 'yes');
     }
 }
+
 add_action('admin_init', 'handle_user_choice');
+
 
 function reset_option_on_switch_theme(): void
 {
@@ -61,10 +66,10 @@ function reset_option_on_switch_theme(): void
 }
 
 
-
 add_action('switch_theme', 'reset_option_on_switch_theme');
 add_action('after_switch_theme', 'reset_option_on_switch_theme');
-function show_create_posts_notice() {
+function show_create_posts_notice(): void
+{
     if (get_option('user_choice_made') === 'yes') {
         return;
     }
@@ -76,45 +81,53 @@ function show_create_posts_notice() {
     echo '</form>';
     echo '</div>';
 }
+
 add_action('admin_notices', 'show_create_posts_notice');
 
 
-
-
-function create_projects_from_json(): void {
-    $image_ids = get_option('theme_image_ids');
-    if (empty($image_ids)) {
-        return;
-    }
-
+function create_projects_from_json(): void
+{
     $json_file_path = get_template_directory() . '/projects.json';
     $json_data = file_get_contents($json_file_path);
     $projects_data = json_decode($json_data, true);
 
+    $base_url = home_url();
+
+
     if ($projects_data) {
         foreach ($projects_data as $project) {
             $post_data = [
-                'post_title'    => $project['title'],
-                'post_content'  => $project['content'],
-                'post_status'   => 'publish',
-                'post_type'     => 'projects',
-                'meta_input'    => [
+                'post_title' => $project['title'],
+                'post_content' => $project['content'],
+                'post_status' => 'publish',
+                'post_type' => 'projects',
+                'meta_input' => [
                     'project_name' => $project['project_name'],
                     'project_description' => $project['project_description'],
                     'start_date' => $project['start_date'],
                     'status' => $project['status'],
-
+                    'gallery' => $project['gallery'],
                 ],
             ];
+
+            $galleryIds = [];
+            foreach ($project['gallery'] as $galleryItem) {
+                $path = __DIR__ . '/content/gallery/' . $galleryItem['filename'];
+
+                $galleryIds[] = add_image_to_media_library($path);
+
+            }
             $post_id = wp_insert_post($post_data);
-            $random_image_id = $image_ids[array_rand($image_ids)];
-            set_post_thumbnail($post_id, $random_image_id);
+
+            update_field('gallery', $galleryIds, $post_id);
+            break;
         }
     }
 }
 
 
-function create_team_from_json(): void {
+function create_team_from_json(): void
+{
     $json_file_path = get_template_directory() . '/team.json';
     $json_data = file_get_contents($json_file_path);
     $team_data = json_decode($json_data, true);

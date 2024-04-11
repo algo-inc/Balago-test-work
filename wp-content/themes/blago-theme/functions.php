@@ -282,7 +282,7 @@ if ( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_661643cacb96c',
                 'label' => 'Email',
-                'name' => 'Email',
+                'name' => 'email',
                 'aria-label' => '',
                 'type' => 'text',
                 'instructions' => '',
@@ -391,9 +391,63 @@ function display_team_shortcode($atts): string
 }
 add_shortcode('display_team', 'display_team_shortcode');
 
-
-
-
-
-
 require_once get_template_directory() . '/theme-innit.php';
+
+
+
+function export_projects_to_json() {
+    $args = array(
+        'post_type' => 'projects',
+        'posts_per_page' => -1, // Вибрати всі проекти
+    );
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        $projects_data = array();
+
+        while ($query->have_posts()) {
+            $query->the_post();
+
+            $project_data = array(
+                'title' => get_the_title(),
+                'content' => get_the_content(),
+                'project_name' => get_post_meta(get_the_ID(), 'project_name', true),
+                'project_description' => get_post_meta(get_the_ID(), 'project_description', true),
+                'start_date' => get_post_meta(get_the_ID(), 'start_date', true),
+                'status' => (bool)get_post_meta(get_the_ID(), 'status', true),
+                'gallery' => array()
+            );
+
+            $gallery_images = get_post_meta(get_the_ID(), 'gallery', true);
+            if ($gallery_images) {
+                foreach ($gallery_images as $image_id) {
+                    $image = array(
+                        'title' => get_the_title($image_id),
+                        'filename' => basename(get_attached_file($image_id)),
+                        'alt' => get_post_meta($image_id, '_wp_attachment_image_alt', true),
+                        'description' => get_post_field('post_content', $image_id),
+                        'sizes' => array(
+                            'thumbnail' => wp_get_attachment_image_src($image_id, 'thumbnail')[0],
+                            'medium' => wp_get_attachment_image_src($image_id, 'medium')[0],
+                            'large' => wp_get_attachment_image_src($image_id, 'large')[0]
+                        )
+                    );
+                    $project_data['gallery'][] = $image;
+                }
+            }
+
+            $projects_data[] = $project_data;
+        }
+
+        wp_reset_postdata();
+
+        $json_data = json_encode($projects_data, JSON_PRETTY_PRINT);
+
+        $json_file_path = get_template_directory() . '/projects.json';
+        file_put_contents($json_file_path, $json_data);
+
+        echo 'JSON файл успішно створено!';
+    }
+}
+//export_projects_to_json();
