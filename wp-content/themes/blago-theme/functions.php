@@ -357,6 +357,8 @@ function display_projects_shortcode($atts): string
 }
 add_shortcode('display_projects', 'display_projects_shortcode');
 
+
+
 function display_team_shortcode($atts): string
 {
     $atts = shortcode_atts( array(

@@ -51,6 +51,7 @@
 @media (max-width: 1380px) {
   .post-type-archive-projects .archive-project-container {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    justify-content: flex-start;
   }
 }
 

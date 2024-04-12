@@ -26,6 +26,7 @@ get_header();
                             'post_type' => 'projects',
                             'posts_per_page' => -1,
                         );
+
                         if ( isset( $_GET['status'] ) && $_GET['status'] !== '' ) {
                             $status = (int) $_GET['status'];
                             $value = $status;

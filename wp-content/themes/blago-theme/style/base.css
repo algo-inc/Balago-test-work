@@ -33,11 +33,27 @@ header .main-navigation ul li {
   line-height: normal;
   font-size: 42px;
 }
+@media (max-width: 768px) {
+  .projects-container .flex-container .projects-title {
+    font-size: 28px;
+    margin: 0;
+  }
+}
 .projects-container .flex-container .archive-link {
   padding: 10px 15px;
   background: black;
   border-radius: 50px;
   color: white;
+}
+@media (max-width: 768px) {
+  .projects-container .flex-container .archive-link {
+    padding: 5px 10px;
+  }
+}
+@media (max-width: 768px) {
+  .projects-container .flex-container {
+    margin-bottom: 20px;
+  }
 }
 .projects-container .projects {
   display: grid;
@@ -53,11 +69,27 @@ header .main-navigation ul li {
   font-size: 42px;
 }
 
+.team-container .flex-container {
+  margin-bottom: 20px;
+}
+.team-container .flex-container .team-title {
+  margin: 0;
+}
+@media (max-width: 768px) {
+  .team-container .flex-container .team-title {
+    font-size: 28px;
+  }
+}
 .team-container .flex-container .archive-link {
   padding: 10px 15px;
   background: black;
   border-radius: 50px;
   color: white;
+}
+@media (max-width: 768px) {
+  .team-container .flex-container .archive-link {
+    padding: 5px 10px;
+  }
 }
 .team-container .team {
   display: grid;

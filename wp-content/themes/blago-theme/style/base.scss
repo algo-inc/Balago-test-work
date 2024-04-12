@@ -31,18 +31,30 @@ header {
 .projects-container {
   margin-bottom: 70px;
   .flex-container {
+
     .projects-title {
       text-align: center;
       line-height: normal;
       font-size: 42px;
+      @media (max-width: 768px) {
+        font-size: 28px;
+        margin: 0;
+      }
     }
     .archive-link {
       padding: 10px 15px;
       background: black;
       border-radius: 50px;
       color: white;
+      @media (max-width: 768px) {
+        padding: 5px 10px;
+      }
     }
     margin-bottom: 40px;
+    @media (max-width: 768px) {
+      margin-bottom: 20px;
+
+    }
   }
   .projects {
     display: grid;
@@ -61,11 +73,21 @@ header {
 }
 .team-container{
   .flex-container{
+    margin-bottom: 20px;
+    .team-title{
+      margin: 0;
+      @media (max-width: 768px) {
+        font-size: 28px;
+      }
+    }
     .archive-link{
       padding: 10px 15px;
       background: black;
       border-radius: 50px;
       color: white;
+      @media (max-width: 768px) {
+        padding: 5px 10px;
+      }
     }
   }
   .team {
