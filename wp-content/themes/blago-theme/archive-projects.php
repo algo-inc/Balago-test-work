@@ -20,7 +20,7 @@ get_header();
                             </select>
                         </form>
                     </div>
-                    <div id="posts" class="posts">
+                    <div id="posts" class="archive-project-container">
                         <?php
                         $args = array(
                             'post_type' => 'projects',
@@ -42,6 +42,8 @@ get_header();
                             while ( $projects_query->have_posts() ) :
                                 $projects_query->the_post();
                                 get_template_part( 'template-parts/project-card', 'project-card' );
+                                ?>
+                                <?php
                             endwhile;
                         else :
                             echo '<p>Записів не знайдено.</p>';

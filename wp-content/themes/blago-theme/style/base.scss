@@ -30,7 +30,6 @@ header {
 
 .projects-container {
   margin-bottom: 70px;
-
   .flex-container {
     .projects-title {
       text-align: center;
@@ -60,11 +59,21 @@ header {
   margin-bottom: 40px;
   font-size: 42px;
 }
+.team-container{
+  .flex-container{
+    .archive-link{
+      padding: 10px 15px;
+      background: black;
+      border-radius: 50px;
+      color: white;
+    }
+  }
+  .team {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
 
-.team {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 25px;
+  }
 }
 
 .site-info {
@@ -72,4 +81,32 @@ header {
   margin-top: 50px;
 }
 
+.single-team{
+  .container{
+    .flex-container{
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      align-items: flex-start;
+      .team-member{
+        max-width: 30%;
+      }
+    }
+  }
+}
 
+.single-projects{
+  .project-date{
+    font-weight: bold;
+  }
+  .gallery{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+    grid-template-rows: auto;
+    img{
+      border-radius: 10px;
+    }
+  }
+}

@@ -11,16 +11,16 @@
 .project-details h2 {
   line-height: normal;
 }
-.project-details .flex-container {
+.project-details .card-flex-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
 }
-.project-details .flex-container .project-date {
+.project-details .card-flex-container .project-date {
   margin: 0;
 }
-.project-details .flex-container .indicator {
+.project-details .card-flex-container .indicator {
   top: 16px;
   right: 16px;
   padding: 3px 7px;

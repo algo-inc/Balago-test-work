@@ -12,7 +12,7 @@ get_header();
                     <div class="archive-sidebar">
 
                     </div>
-                    <div id="posts" class="posts">
+                    <div id="posts" class="team-post-container container">
                         <?php
                         $args = array(
                             'post_type' => 'team',

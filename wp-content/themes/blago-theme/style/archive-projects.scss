@@ -18,8 +18,16 @@
         width: 100%;
         background: #333333;
         border-radius: 20px;
+        @media (max-width: 768px) {
+          max-width: 100%;
+          width: 100%;
+          min-width: auto;
+        }
         label{
           color: white;
+          margin-bottom: 5px;
+          display: block;
+          margin-left: 5px;
         }
         #status-select{
           width: 100%;
@@ -31,13 +39,16 @@
       }
     }
   }
-  .posts{
+  .archive-project-container{
     display: grid;
     width: 100%;
     grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
     gap: 14px;
+    justify-content: space-between;
+    @media (max-width: 1380px) {
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
   }
-
 }
 
 

@@ -19,8 +19,6 @@ function blago_theme_scripts(): void
     }
     wp_enqueue_style('fancybox-style', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css');
     wp_enqueue_script('fancybox', 'https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js', true);
-
-
     // wp_enqueue_script( 'custom-theme-script', get_template_directory_uri() . '/js/custom-script.js', array(), '1.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'blago_theme_scripts' );
@@ -265,7 +263,7 @@ if ( function_exists('acf_add_local_field_group') ):
             array(
                 'key' => 'field_661641abcb96a',
                 'label' => 'Linkedin',
-                'name' => 'Linkedin',
+                'name' => 'linkedin',
                 'aria-label' => '',
                 'type' => 'url',
                 'instructions' => '',
@@ -340,7 +338,7 @@ function display_projects_shortcode($atts): string
     echo  '<div class="flex-container">';
     echo '<h2 class="projects-title">' . esc_html($atts['block_title']) . '</h2>';
     if ( $archive_link ) {
-        echo '<a class="archive-link" href="' . esc_url( $archive_link ) . '"> Всі проекти </a>';
+        echo '<a class="archive-link" href="' . esc_url( $archive_link ) . '"> '. esc_html($atts['block_title']) .' </a>';
     }
     echo '</div>';
     if ($projects_query->have_posts()) {
@@ -351,8 +349,6 @@ function display_projects_shortcode($atts): string
             echo '<script>Fancybox.bind(document.getElementById("gallery-' . get_the_ID() . '"), "[data-fancybox]", {});</script>';
         }
         echo '</div>';
-
-
     } else {
         echo '<p>Записів не знайдено.</p>';
     }
@@ -368,14 +364,20 @@ function display_team_shortcode($atts): string
     $atts = shortcode_atts( array(
         'block_title' => 'Команда',
     ), $atts );
-
+    $archive_link = get_post_type_archive_link( 'team' );
     $team_query = new WP_Query(array(
         'post_type' => 'team',
         'posts_per_page' => -1,
     ));
 
     ob_start();
+    echo '<section class="team-container">';
+    echo  '<div class="flex-container">';
     echo '<h2 class="team-title">' . esc_html($atts['block_title']) . '</h2>';
+    if ( $archive_link ) {
+        echo '<a class="archive-link" href="' . esc_url( $archive_link ) . '"> ' . esc_html($atts['block_title']) .' </a>';
+    }
+    echo '</div>';
     if ($team_query->have_posts()) {
         echo '<div class="team">';
         while ($team_query->have_posts()) {
@@ -387,67 +389,10 @@ function display_team_shortcode($atts): string
         echo '<p>Учасників команди не знайдено.</p>';
     }
     wp_reset_postdata();
+    echo '</section>';
     return ob_get_clean();
 }
 add_shortcode('display_team', 'display_team_shortcode');
 
-require_once get_template_directory() . '/theme-innit.php';
+require_once get_template_directory() . '/theme-init.php';
 
-
-
-function export_projects_to_json() {
-    $args = array(
-        'post_type' => 'projects',
-        'posts_per_page' => -1, // Вибрати всі проекти
-    );
-
-    $query = new WP_Query($args);
-
-    if ($query->have_posts()) {
-        $projects_data = array();
-
-        while ($query->have_posts()) {
-            $query->the_post();
-
-            $project_data = array(
-                'title' => get_the_title(),
-                'content' => get_the_content(),
-                'project_name' => get_post_meta(get_the_ID(), 'project_name', true),
-                'project_description' => get_post_meta(get_the_ID(), 'project_description', true),
-                'start_date' => get_post_meta(get_the_ID(), 'start_date', true),
-                'status' => (bool)get_post_meta(get_the_ID(), 'status', true),
-                'gallery' => array()
-            );
-
-            $gallery_images = get_post_meta(get_the_ID(), 'gallery', true);
-            if ($gallery_images) {
-                foreach ($gallery_images as $image_id) {
-                    $image = array(
-                        'title' => get_the_title($image_id),
-                        'filename' => basename(get_attached_file($image_id)),
-                        'alt' => get_post_meta($image_id, '_wp_attachment_image_alt', true),
-                        'description' => get_post_field('post_content', $image_id),
-                        'sizes' => array(
-                            'thumbnail' => wp_get_attachment_image_src($image_id, 'thumbnail')[0],
-                            'medium' => wp_get_attachment_image_src($image_id, 'medium')[0],
-                            'large' => wp_get_attachment_image_src($image_id, 'large')[0]
-                        )
-                    );
-                    $project_data['gallery'][] = $image;
-                }
-            }
-
-            $projects_data[] = $project_data;
-        }
-
-        wp_reset_postdata();
-
-        $json_data = json_encode($projects_data, JSON_PRETTY_PRINT);
-
-        $json_file_path = get_template_directory() . '/projects.json';
-        file_put_contents($json_file_path, $json_data);
-
-        echo 'JSON файл успішно створено!';
-    }
-}
-//export_projects_to_json();

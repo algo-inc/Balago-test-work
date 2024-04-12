@@ -1,0 +1,7 @@
+[
+  {
+    "ID": 6,
+    "post_title": "Blago",
+    "post_content": "<!-- wp:paragraph -->\n<p>Test Work\n\n\n\n\n\n</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:shortcode -->\n[display_projects block_title=\"Мої проекти\" projects_count=\"3\"]\n<!-- /wp:shortcode -->\n\n<!-- wp:shortcode -->\n[display_team block_title=\"Команда\"]\n<!-- /wp:shortcode -->"
+  }
+]

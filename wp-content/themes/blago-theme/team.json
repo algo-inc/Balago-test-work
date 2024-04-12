@@ -3,7 +3,7 @@
     "title": "Віктор Черниш",
     "content": "",
     "name": "Віктор Черниш",
-    "photo": "http://blago/wp-content/uploads/2024/04/team-viktor-chernish.jpg",
+    "photo": "/wp-content/uploads/2024/04/team-viktor-chernish.jpg",
     "position": "Маркетинг-менеджер",
     "linkedin": "https://www.linkedin.com/in/viktor-chernish/",
     "email": "chernish@gmail.com"
@@ -12,7 +12,7 @@
     "title": "Михайло Сидоренко",
     "content": "",
     "name": "Михайло Сидоренко",
-    "photo": "http://blago/wp-content/uploads/2024/04/team-mykhailo-sidorenko.jpg",
+    "photo": "/wp-content/uploads/2024/04/team-mykhailo-sidorenko.jpg",
     "position": "Програміст",
     "linkedin": "https://www.linkedin.com/in/mykhailo-sidorenko/",
     "email": "sidorenko@gmail.com"
@@ -21,7 +21,7 @@
     "title": "Юлія Іванова",
     "content": "",
     "name": "Юлія Іванова",
-    "photo": "http://blago/wp-content/uploads/2024/04/team-yuliya-ivanova.jpg",
+    "photo": "/wp-content/uploads/2024/04/team-yuliya-ivanova.jpg",
     "position": "Фінансовий аналітик",
     "linkedin": "https://www.linkedin.com/in/yuliya-ivanova/",
     "email": "ivanova@gmail.com"
@@ -30,7 +30,7 @@
     "title": "Анна Коваленко",
     "content": "",
     "name": "Анна Коваленко",
-    "photo": "http://blago/wp-content/uploads/2024/04/team-anna-kovalenko.jpg",
+    "photo": "/wp-content/uploads/2024/04/team-anna-kovalenko.jpg",
     "position": "Менеджер з розвитку бізнесу",
     "linkedin": "https://www.linkedin.com/in/anna-kovalenko/",
     "email": "kovalenko@gmail.com"

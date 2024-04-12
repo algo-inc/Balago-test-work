@@ -1,0 +1,8 @@
+.post-type-archive-team .team-post-container {
+  display: grid;
+  width: 100%;
+  justify-content: space-between;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
+}
+
+/*# sourceMappingURL=archive-team.css.map */

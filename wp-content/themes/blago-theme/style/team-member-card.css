@@ -1,0 +1,44 @@
+.team-member {
+  display: flex;
+  flex-direction: column;
+  border: 1px #0c0c0c solid;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 300ms linear;
+}
+.team-member:hover {
+  transform: scale(1.01);
+}
+.team-member .content-container {
+  padding: 10px;
+}
+.team-member .content-container .team-member-name {
+  margin-bottom: 0;
+  line-height: normal;
+}
+.team-member .content-container .team-member-position {
+  margin-bottom: 5px;
+  color: #737baf;
+}
+.team-member .content-container .team-member-email {
+  margin-bottom: 8px;
+  display: block;
+}
+.team-member .content-container .team-member-email:hover {
+  color: #0c88b4;
+}
+.team-member .content-container .team-member-linkedin {
+  display: flex;
+  color: black;
+  font-weight: bold;
+  gap: 10px;
+  font-size: 18px;
+}
+.team-member .content-container .team-member-linkedin:hover {
+  color: #0c88b4;
+}
+.team-member .content-container .team-member-linkedin:hover svg path {
+  fill: #0c88b4;
+}
+
+/*# sourceMappingURL=team-member-card.css.map */

@@ -22,8 +22,18 @@
   background: #333333;
   border-radius: 20px;
 }
+@media (max-width: 768px) {
+  .post-type-archive-projects .content-container .flex-container .archive-sidebar {
+    max-width: 100%;
+    width: 100%;
+    min-width: auto;
+  }
+}
 .post-type-archive-projects .content-container .flex-container .archive-sidebar label {
   color: white;
+  margin-bottom: 5px;
+  display: block;
+  margin-left: 5px;
 }
 .post-type-archive-projects .content-container .flex-container .archive-sidebar #status-select {
   width: 100%;
@@ -31,11 +41,17 @@
   height: 40px;
   padding: 0 15px;
 }
-.post-type-archive-projects .posts {
+.post-type-archive-projects .archive-project-container {
   display: grid;
   width: 100%;
   grid-template-columns: repeat(auto-fit, minmax(280px, 300px));
   gap: 14px;
+  justify-content: space-between;
+}
+@media (max-width: 1380px) {
+  .post-type-archive-projects .archive-project-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
 }
 
 /*# sourceMappingURL=archive-projects.css.map */
